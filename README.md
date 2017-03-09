@@ -13,22 +13,22 @@ SimplePlayer Vs 10086617A
 <li>8	0	100</li>
 
 RandomPlayer Vs 10086617A
-Board Size	SimplePlayer Wins	10086617A Wins</li>
-4	0	100</li>
-5	13	87</li>
-6	0	100</li>
-7	1	99</li>
-8	0	100</li>
+<li>Board Size	SimplePlayer Wins	10086617A Wins</li>
+<li>4	0	100</li>
+<li>5	13	87</li>
+<li>6	0	100</li>
+<li>7	1	99</li>
+<li>8	0	100</li>
 
    This result seems really good just because the strategy of its opponent is very simple. Then I wrote another test player, 10086617B using another evaluation function h = myMoves/opMoves. It's easy to say that the 10086617B player will get good results to play against simple or random player so I test it only with player 10086617A in a 10-game tournament as 100-game need too long time to run. Here is the result:
 
 10086617B Vs 10086617A 
-Board Size	10086617B Wins	10086617A Wins</li>
-4	5	5</li>
-5	5	5</li>
-6	10	0</li>
-7	0	10</li>
-8	5	5</li>
+<li>Board Size	10086617B Wins	10086617A Wins</li>
+<li>4	5	5</li>
+<li>5	5	5</li>
+<li>6	10	0</li>
+<li>7	0	10</li>
+<li>8	5	5</li>
 
    When using minimax with heuristic, we assume that the opponent also uses the same heuristic as we use but actually most of the time, the opponent is not. So we can't avoid this kind of result but the heuristic function just uses the feature, the number of possible valid moves for a player on current board. When playing the game, I noticed that one piece can have several valid moves. Then I wrote the third minimax player 10086617C with evaluation function h = 2*myMovablePieces - opMovablePieces, where myMovablePieces stands for the movable pieces on current board for my player and similar for opMovablePieces. I use the same test strategy as above but test with both 10086617A and 10086617B and the result is :
 
